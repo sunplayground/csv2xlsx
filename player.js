@@ -185,7 +185,7 @@ function completeFn()
 	//console.log("Rows:", rows, "Stepped:", stepped, "Chunks:", chunks);
 	var dataset = []
 	dataset = arguments[0]['data']
-	console.log(dataset)
+	//console.log(dataset)
 
 
 
@@ -218,7 +218,8 @@ var excel = $JExcel.new("Calibri light 10 #333333");			// Default font
 
 			for (var i=0;i<headers.length;i++){																// Loop all the haders
 				excel.set(0,i,0,headers[i],formatHeader);													// Set CELL with header text, using header format
-				excel.set(0,i,undefined,"auto");															// Set COLUMN width to auto (according to the standard this is only valid for numeric columns)
+				excel.set(0,i,undefined,"auto");	
+				console.log(headers[i])														// Set COLUMN width to auto (according to the standard this is only valid for numeric columns)
 			}
 			
 			
@@ -243,7 +244,7 @@ var excel = $JExcel.new("Calibri light 10 #333333");			// Default font
 
 																												// Some other text
 				}
-
+			document.getElementById("skucount").innerHTML = dataset.length-1;	
 			// excel.set(0,1,undefined,30);																	// Set COLUMN 1 to 30 chars width
 			// excel.set(0,3,undefined,30);																	// Set COLUMN 3 to 20 chars width
 			// excel.set(0,4,undefined,20, excel.addStyle( {align:"R"}));										// Align column 4 to the right
