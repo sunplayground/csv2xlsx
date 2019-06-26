@@ -1,0 +1,5 @@
+SOCKSPort 9050 # Default: Bind to localhost:9050 for local connections.
+SOCKSPort 192.168.0.1:9100 # Bind to this address:port too.
+SOCKSPolicy accept 127.0.0.1/32
+SOCKSPolicy accept ( connection source IP ) / 32
+SOCKSPolicy reject *
