@@ -15,6 +15,12 @@ import http.cookiejar
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
+from pyvirtualdisplay import Display
+
+display = Display(visible=0, size=(1024, 768))
+display.start()
+driver = webdriver.Chrome()
+driver.set_window_size(1024, 768)
 options = webdriver.ChromeOptions() 
 options.add_argument('--proxy-server="socks5://127.0.0.1:9050" --host-resolver-rules="MAP * 0.0.0.0 , EXCLUDE myproxy" --headless --disable-gpu')
 driver = webdriver.Chrome(chrome_options=options)
